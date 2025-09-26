@@ -38,6 +38,8 @@ REM ------------------------------
 echo Extracting ZIP using %EXE%...
 "%EXE%" x %ZIPFILE% -aoa -o%BRANCH%
 
+ move /Y ishangam_calling\releases-ishangam_calling\ishangam_calling.bat ishangam_calling
+ 
 REM ------------------------------
 echo Done! Folder is ready: %BRANCH%
 pause
