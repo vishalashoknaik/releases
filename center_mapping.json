@@ -1,0 +1,32 @@
+{
+  "Ashram": [],
+  "Banaswadi": [],
+  "Bannerghatta": ["Bannergatta"],
+  "Budigere Cross": ["Budigere"],
+  "Chikkamagaluru": [],
+  "Davanagere": [],
+  "Electronic City": [],
+  "Girinagar": ["GiriNagar"],
+  "Hebbal": ["hebbal"],
+  "Indiranagar": ["IndiraNagar", "Indira Nagar"],
+  "Jayanagar": ["Jayangar"],
+  "Koramangala": [],
+  "Malleshwaram": [],
+  "Marathahalli": ["Marathahalli/ Whitefield"],
+  "Mysuru": ["Mysore"],
+  "Tumkur": [],
+  "Unmapped": ["Unknown"],
+  "Vijayanagar": ["VijayaNagar"],
+  "Yelahanka": [],
+  "North Karnataka": [
+    "Hubbali/Davanagere",
+    "Hubballi - Dharwad",
+    "Bidar Karnataka",
+    "Kalaburagi",
+    "North Karnataka",
+    "Raichur",
+    "Tumkur",
+    "Davanagere",
+    "Vijayapura"
+  ]
+}
