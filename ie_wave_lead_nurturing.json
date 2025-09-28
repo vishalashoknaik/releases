@@ -1,0 +1,14 @@
+{
+  "session_id": "",
+  "uid": 89361,
+  "project_name": "IE Wave Lead Nurturing",
+  "callers_list": "Master Sheet2.xlsx",
+  "sheet_id": "1EXnjFzpolii42vYWAtyJAGFsAhSx7WdSkxSNoAGD7kc",
+  "sheet_name": "Master",
+  "center_mapping": "center_mapping.json",
+  "campaigns": {
+    "P1 Leads": 55943,
+    "P2 Leads": 55944,
+    "P0 Leads": 55941
+  }
+}
