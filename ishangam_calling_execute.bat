@@ -1,11 +1,34 @@
 @echo off
-rem This has to be set once in the begenning of setup
-set AIVEN_PASS=
 
-rem Get session ID from santosha. this has to be set for every run.
-set SESSION_ID=c2ebf3a45f327ad4523b3b38e57afecf932f8917
+echo Executing...
+call session_id.bat
+call db_pass.bat
 
-start ishangam_campaign.exe --campaign --caller --loop 90 --session %SESSION_ID% --config ie_wave_lead_nurturing.config
-ie_wave_lead_nurturing.bat
+:: Check if environment variable is set
+if not defined AIVEN_PASS (
+    echo [ERROR] AIVEN_PASS is not set!
+    echo Please set it in db_pass.bat file
+    exit /b 1
+)
 
+:: If set, print confirmation (masking the value)
+echo AIVEN_PASS is set.
+
+
+@echo off
+setlocal
+
+:: Check if environment variable is set
+if not defined SESSION_ID (
+    echo [ERROR] SESSION_ID is not set!
+    echo Please set it in the batch file
+    exit /b 1
+)
+
+:: If set, print confirmation (masking the value)
+echo SESSION_ID is set.
+
+
+start ie_wave_lead_nurturing.bat
+ie_wave_potential_med_p1.bat
 pause
