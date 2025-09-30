@@ -7,6 +7,25 @@
   "sheet_name": "Master",
   "center_mapping": "center_mapping.json",
   "campaigns": {
-    "Koramangala": 56367
+    "Ballari": 56358,
+    "Banaswadi": 56359,
+    "Bannerghatta Road": 56360,
+    "Belagavi": 56361,
+    "Electronic City": 56362,
+    "Hebbal": 56363,
+    "Hubballi": 56364,
+    "Indiranagar": 56365,
+    "Jayanagar": 56366,
+    "Koramangala": 56367,
+    "Malleswaram": 56368,
+    "Mangalore": 56369,
+    "Marathahalli": 56370,
+    "Shivamogga": 56371,
+    "Vijayanagar": 56372,
+    "Whitefield": 56373,
+    "Chikmagalur": 56375,
+    "Bangalore Rural": 56376,
+    "Davangere": 56377,
+    "Girinagar": 56378
   }
 }
