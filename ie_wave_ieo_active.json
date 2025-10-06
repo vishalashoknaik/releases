@@ -1,0 +1,24 @@
+{
+  "session_id": "",
+  "uid": 89361,
+  "project_name": "IE Wave IEO Active",
+  "callers_list": "Master Sheet2.xlsx",
+  "sheet_id": "1EXnjFzpolii42vYWAtyJAGFsAhSx7WdSkxSNoAGD7kc",
+  "sheet_name": "Master",
+  "center_mapping": "center_mapping.json",
+  "campaigns": {
+    "AA - IEO - BW - Eng AC": 56502,
+    "AA - IEO - BG - Eng AC": 56503,
+    "AA - IEO - EC - Eng AC": 56506,
+    "AA - IEO - HB - Eng AC": 56507,
+    "AA - IEO - IN - Eng AC": 56508,
+    "AA - IEO - JN - Eng AC": 56509,
+    "AA - IEO - GN - Eng AC": 56510,
+    "AA - IEO - KM - Eng AC": 56511,
+    "AA - IEO - MW - Eng AC": 56512,
+    "AA - IEO - MH - Eng AC": 56513,
+    "AA - IEO - WF - Eng AC": 56514,
+    "AA - IEO - VN - Eng AC": 56515,
+    "AA - IEO - Ban -  Kan AC": 56531
+  }
+}

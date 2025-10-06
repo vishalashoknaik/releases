@@ -40,5 +40,6 @@ echo SESSION_ID is set.
 
 
 start ie_wave_lead_nurturing.bat
+start ie_wave_ieo_active.bat
 ie_wave_potential_med_p1.bat
 pause
