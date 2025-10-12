@@ -3,15 +3,14 @@
   "Banaswadi": [],
   "Bannerghatta": ["Bannergatta"],
   "Budigere Cross": ["Budigere"],
-  "Chikkamagaluru": [],
-  "Electronic City": [],
+  "Electronic City": ["E city", "E-city"],
   "Girinagar": ["GiriNagar"],
   "Hebbal": ["hebbal"],
   "Indiranagar": ["IndiraNagar", "Indira Nagar"],
   "Jayanagar": ["Jayangar"],
   "Koramangala": [],
-  "Malleshwaram": [],
-  "Marathahalli": ["Marathahalli/ Whitefield"],
+  "Malleshwaram": ["Malleswaram"],
+  "Marathahalli": ["Marathahalli/ Whitefield", "Whitefield", "Marthahalli"],
   "Mysuru": ["Mysore"],
   "Mangalore": ["Udupi"],
   "Unmapped": ["Unknown"],
@@ -54,6 +53,7 @@
     "Koppal",
     "Kodagu",
     "Hassan",
-    "Chamarajanagar"
+    "Chamarajanagar",
+    "Chikkamagaluru"
   ]
 }
