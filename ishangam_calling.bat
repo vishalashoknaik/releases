@@ -8,4 +8,3 @@ setlocal
 set ISHANGAM_CALLING_TOP=set
 
 ishangam_calling_execute.bat
-pause

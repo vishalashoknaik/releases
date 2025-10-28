@@ -1,0 +1,23 @@
+{
+  "session_id": "",
+  "uid": 89361,
+  "project_name": "IE Wave Potential Med P2",
+  "callers_list": "Master Sheet2.xlsx",
+  "sheet_id": "1EXnjFzpolii42vYWAtyJAGFsAhSx7WdSkxSNoAGD7kc",
+  "sheet_name": "Master",
+  "center_mapping": "center_mapping.json",
+  "campaigns": {
+    "Banaswadi-P2": 56693,
+    "Bannerghatta Road-P2": 56694,
+    "Electronic City-P2": 56695,
+    "Hebbal-P2": 56696,
+    "Indiranagar-P2": 56697,
+    "Jayanagar-P2": 56698,
+    "Koramangala-P2": 56699,
+    "Malleswaram-P2": 56700,
+    "Marathahalli-P2": 56701,
+    "Vijayanagar-P2": 56703,
+    "Whitefield-P2": 56704,
+    "Girinagar-P2": 56708
+  }
+}

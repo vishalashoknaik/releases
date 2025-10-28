@@ -1,0 +1,1 @@
+ishangam_campaign.exe --campaign --caller --session %SESSION_ID% --config ie_wave_potential_med_p2.json

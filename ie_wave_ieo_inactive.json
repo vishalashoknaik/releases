@@ -1,0 +1,24 @@
+{
+  "session_id": "",
+  "uid": 89361,
+  "project_name": "IE Wave IEO Inactive",
+  "callers_list": "Master Sheet2.xlsx",
+  "sheet_id": "1EXnjFzpolii42vYWAtyJAGFsAhSx7WdSkxSNoAGD7kc",
+  "sheet_name": "Master",
+  "center_mapping": "center_mapping.json",
+  "campaigns": {
+    "P2 Leads INAC-step6-BW": 57152,
+    "P2 Leads INAC-step6-BG road": 57157,
+    "P2 Leads INAC-step6-HB": 57158,
+    "P2 Leads INAC-step6-JN": 57159,
+    "P2 Leads INAC-step6-IN": 57160,
+    "P2 Leads INAC-step6-KM": 57161,
+    "P2 Leads INAC-step6-MW": 57162,
+    "P2 Leads INAC-step6-MH": 57163,
+    "P2 Leads INAC-step6-VN": 57164,
+    "P2 Leads INAC-step6-GN": 57165,
+    "P2 Leads INAC-step6-EC": 57169,
+    "P2 Leads INAC-step6-MY": 57171,
+    "P2 Leads INAC-step6-MN": 57172
+  }
+}

@@ -1,8 +1,13 @@
 @echo off
 
 echo Executing...
+:start
+echo starting the loop
+timeout /t 3 /nobreak >nul
+
 call session_id.bat
 call db_pass.bat
+
 
 :: Check if environment variable is set
 if not defined ISHANGAM_CALLING_TOP (
@@ -39,7 +44,13 @@ if not defined SESSION_ID (
 echo SESSION_ID is set.
 
 
-start ie_wave_lead_nurturing.bat
-start ie_wave_ieo_active.bat
-ie_wave_potential_med_p1.bat
+echo batch execution
+call ie_wave_lead_nurturing.bat
+call ie_wave_ieo_active.bat
+call ie_wave_ieo_inactive.bat
+call ie_wave_potential_med_p1.bat
+call ie_wave_potential_med_p2.bat
+call others.bat
+goto start
+goto start
 pause
