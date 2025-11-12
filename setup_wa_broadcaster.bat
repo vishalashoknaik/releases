@@ -12,6 +12,12 @@ set CLONE_DIR=wa_broadcaster
 set SEVENZIP=7za.exe
 set SEVENDLL=7za.dll
 set TOOL_REPO=vishalashoknaik/releases
+set PYTHON_SPAMURAI_SETUP=setup_python_spamurai.bat
+
+
+REM Download python setup batch
+curl -L -o %PYTHON_SPAMURAI_SETUP% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%PYTHON_SPAMURAI_SETUP%
+
 
 REM ------------------------------
 REM Download 7-Zip standalone files
