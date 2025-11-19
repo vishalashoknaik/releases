@@ -80,9 +80,8 @@ if exist "%PYTHON_DIR%" (
     echo Removing existing python installation...
     rmdir /s /q "%PYTHON_DIR%"
 )
-pause
 
-%PYTHON_SPAMURAI_SETUP%
+CALL %PYTHON_SPAMURAI_SETUP%
 
 REM ==============================
 REM Set Git executable
@@ -96,7 +95,6 @@ REM Clone or Reset Repository
 REM ==============================
 if exist "%CLONE_DIR%\.git" goto RESET_REPO
 goto CLONE_REPO
-
 
 :CLONE_REPO
 echo Cloning repository fresh...
