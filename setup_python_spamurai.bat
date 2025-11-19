@@ -1,4 +1,4 @@
-@echo on
+@echo off
 setlocal
 
 REM ------------------------------
@@ -69,5 +69,5 @@ echo Python Version:
 echo ----------------------------------
 echo.
 
-pause
+if not defined SKIP_PAUSE pause
 endlocal

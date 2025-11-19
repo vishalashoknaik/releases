@@ -1,4 +1,4 @@
-@echo on
+@echo off
 setlocal
 
 REM ==============================
@@ -81,6 +81,7 @@ if exist "%PYTHON_DIR%" (
     rmdir /s /q "%PYTHON_DIR%"
 )
 
+set SKIP_PAUSE=1
 CALL %PYTHON_SPAMURAI_SETUP%
 
 REM ==============================
