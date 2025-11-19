@@ -1,51 +1,67 @@
 @echo on
 setlocal
 
-REM ------------------------------
+REM ==============================
 REM Configuration
-REM ------------------------------
+REM ==============================
 set REPO_URL=https://github.com/vishalashoknaik/wa_broadcaster.git
 set BRANCH=master
 set GIT_PORTABLE=PortableGit-2.51.0-64-bit.7z.exe
 set GIT_DIR=PortableGit
-set CLONE_DIR=wa_broadcaster
+set CLONE_DIR=taranga
 set SEVENZIP=7za.exe
 set SEVENDLL=7za.dll
 set TOOL_REPO=vishalashoknaik/releases
 set PYTHON_SPAMURAI_SETUP=setup_python_spamurai.bat
+set PYTHON_SPAMURAI_7Z=python_311_spamurai.7z
+set PYTHON_DIR=python_311_spamurai
 
-
+REM ==============================
 REM Download python setup batch
+REM ==============================
 curl -L -o %PYTHON_SPAMURAI_SETUP% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%PYTHON_SPAMURAI_SETUP%
 
 
-REM ------------------------------
-REM Download 7-Zip standalone files
-REM ------------------------------
-if not exist %SEVENZIP% goto DOWNLOAD_7ZA
-goto SKIP_7ZA
+REM ==============================
+REM Fresh Python Install
+REM ==============================
+echo Checking Python directory...
 
-:DOWNLOAD_7ZA
-echo Downloading %SEVENZIP%...
-curl -L -o %SEVENZIP% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%SEVENZIP%
 
-:SKIP_7ZA
-if not exist %SEVENDLL% goto DOWNLOAD_7ZA_DLL
-goto SKIP_7ZA_DLL
+if exist %PYTHON_SPAMURAI_7Z% (
+    echo Removing old python 7z...
+    del %PYTHON_SPAMURAI_7Z%
+)
 
-:DOWNLOAD_7ZA_DLL
-echo Downloading %SEVENDLL%...
-curl -L -o %SEVENDLL% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%SEVENDLL%
+REM echo Downloading fresh python portable...
+REM curl -L -o python_spamurai.zip https://raw.githubusercontent.com/%TOOL_REPO%/downloads/python_spamurai.zip
 
-:SKIP_7ZA_DLL
+REM echo Extracting python portable...
+REM %SEVENZIP% x python_spamurai.zip -o"%PYTHON_DIR%" -y
 
-REM ------------------------------
-REM Download & extract PortableGit
-REM ------------------------------
-if not exist %GIT_DIR% goto DOWNLOAD_GIT
-goto SKIP_GIT
 
-:DOWNLOAD_GIT
+REM ==============================
+REM 7-Zip Standalone Download
+REM ==============================
+if not exist %SEVENZIP% (
+    echo Downloading %SEVENZIP%...
+    curl -L -o %SEVENZIP% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%SEVENZIP%
+)
+
+if not exist %SEVENDLL% (
+    echo Downloading %SEVENDLL%...
+    curl -L -o %SEVENDLL% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%SEVENDLL%
+)
+
+
+REM ==============================
+REM Download & Extract PortableGit
+REM ==============================
+if exist "%GIT_DIR%" (
+    echo Cleaning up existing Git directory...
+    rmdir /s /q "%GIT_DIR%"
+)
+
 echo Downloading Git Portable...
 curl -L -o %GIT_PORTABLE% https://raw.githubusercontent.com/%TOOL_REPO%/downloads/%GIT_PORTABLE%
 
@@ -55,31 +71,63 @@ echo Extracting Git Portable...
 REM Detect actual extracted folder
 for /d %%D in (%GIT_DIR%*) do set GIT_DIR=%%D
 
-:SKIP_GIT
 
-REM ------------------------------
+REM ==============================
+REM Install python
+REM ==============================
+echo "%PYTHON_DIR%"
+if exist "%PYTHON_DIR%" (
+    echo Removing existing python installation...
+    rmdir /s /q "%PYTHON_DIR%"
+)
+pause
+
+%PYTHON_SPAMURAI_SETUP%
+
+REM ==============================
 REM Set Git executable
-REM ------------------------------
+REM ==============================
 set GIT_EXE=%CD%\%GIT_DIR%\bin\git.exe
 set REPO_PATH=%CD%\%CLONE_DIR%
 
-REM ------------------------------
-REM Clone or update repo using jumps
-REM ------------------------------
-if exist "%CLONE_DIR%\.git" goto PULL_REPO
+
+REM ==============================
+REM Clone or Reset Repository
+REM ==============================
+if exist "%CLONE_DIR%\.git" goto RESET_REPO
 goto CLONE_REPO
 
+
 :CLONE_REPO
-echo Cloning repository...
+echo Cloning repository fresh...
 "%GIT_EXE%" clone -b %BRANCH% %REPO_URL% "%REPO_PATH%"
 goto AFTER_GIT
 
-:PULL_REPO
-echo Repository exists. Pulling latest changes...
-rem cd "%REPO_PATH%"
-echo Please delete the existing repository. Remember to copy any local files before that
-goto END
+
+:RESET_REPO
+echo Repository exists. Resetting to latest commit...
+
+cd "%REPO_PATH%"
+
+echo Fetching latest...
+"%GIT_EXE%" fetch --all
+
+echo Hard-resetting tracked files...
+"%GIT_EXE%" reset --hard origin/%BRANCH%
+
+echo NOT deleting untracked files (as requested).
+
+cd ..
+goto AFTER_GIT
+
+
 :AFTER_GIT
-echo Done!
-:END
+
+
+del %PYTHON_SPAMURAI_7Z%
+del %GIT_PORTABLE%
+del %SEVENZIP%
+del %SEVENDLL%
+
+echo Setup completed successfully!
 pause
